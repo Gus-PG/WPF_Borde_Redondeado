@@ -1,0 +1,31 @@
+﻿<Window x:Class="WPF_BordeRedondeado.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_BordeRedondeado"
+        mc:Ignorable="d"
+        Title="VentanaBordesRedondeados" Height="450" Width="800"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None">
+        <!-- En 'WindowStyle' quitamos los botones de Maximinzar / Minimizar y Cerrar. -->
+        
+    <Window.Resources>
+        <!-- Define los colores que se utilizarán en el gradiente -->
+        <LinearGradientBrush x:Key="BordeGradient" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#EEF3F3" Offset="0"/>
+            <GradientStop Color="#BFD8CB" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Resources>
+    <!-- Define la apariencia visual del control -->
+    <Border Background="#404040" BorderThickness="1" BorderBrush="{StaticResource BordeGradient}" CornerRadius="10">
+        <Grid>
+            <!-- Aquí iría el contenido del control -->
+            <TextBlock Text="Ejemplo de Ventana Principal con: bordes redondeados y bordes con gradiente." 
+                       HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="LightGray"/>
+        </Grid>
+    </Border>
+</Window>
